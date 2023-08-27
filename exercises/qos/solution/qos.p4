@@ -207,9 +207,8 @@ control MyIngress(inout headers hdr,
         if (hdr.ipv4.isValid()) {
             if (hdr.ipv4.protocol == IP_PROTOCOLS_UDP) {
                 expedited_forwarding();
-	    }
-            else if (hdr.ipv4.protocol == IP_PROTOCOLS_TCP) {
-	        voice_admit();
+	        } else if (hdr.ipv4.protocol == IP_PROTOCOLS_TCP) {
+	            voice_admit();
             }
             ipv4_lpm.apply();
         }
